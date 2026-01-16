@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+/* 
+  Custom Brand Colors
+  Define your brand colors here using the @theme directive.
+  These colors will be available as Tailwind utilities like:
+  - bg-brand-primary, text-brand-primary, border-brand-primary, etc.
+  - bg-brand-secondary, text-brand-secondary, etc.
+  - bg-brand-accent, text-brand-accent, etc.
+  
+  You can also define shades (50-950) for each color if needed.
+*/
+@theme {
+  /* Primary brand color - your main brand color */
+  --color-brand-primary: #8b5cf6; /* Darker vibrant violet */
+  
+  /* Secondary brand color - complementary to primary */
+  --color-brand-secondary: #9e2561; /* Slightly more maroon and a little lighter */
+  
+  /* Accent color - for highlights and CTAs */
+  --color-brand-accent: #ffd18c; /* Brighter, light coral with an orange hue for vivid contrast */
+  
+  /* Neutral brand colors (optional) */
+  --color-brand-dark: #1e293b; /* Example: dark slate - replace with your color */
+  --color-brand-light: #f1f5f9; /* Example: light slate - replace with your color */
+  
+  /* 
+    Optional: Define color shades for more flexibility
+    Uncomment and customize if you want multiple shades of your brand colors
+  */
+  /*
+  --color-brand-primary-50: #eff6ff;
+  --color-brand-primary-100: #dbeafe;
+  --color-brand-primary-200: #bfdbfe;
+  --color-brand-primary-300: #93c5fd;
+  --color-brand-primary-400: #60a5fa;
+  --color-brand-primary-500: #3b82f6;
+  --color-brand-primary-600: #2563eb;
+  --color-brand-primary-700: #1d4ed8;
+  --color-brand-primary-800: #1e40af;
+  --color-brand-primary-900: #1e3a8a;
+  --color-brand-primary-950: #172554;
+  */
+}
