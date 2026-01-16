@@ -12,17 +12,22 @@
 */
 @theme {
   /* Primary brand color - your main brand color */
-  --color-brand-primary: #8b5cf6; /* Darker vibrant violet */
+  --color-brand-secondary: var(--color-violet-500); /* tailwind violet-950 */
+  --color-brand-secondary-dark: var(--color-violet-700); /* tailwind violet-950 */
   
-  /* Secondary brand color - complementary to primary */
-  --color-brand-secondary: #9e2561; /* Slightly more maroon and a little lighter */
+  /* primary brand color - complementary to secondary */
+  --color-brand-primary: var(--color-fuchsia-500); /* Slightly more maroon and a little lighter */
+  --color-brand-primary-dark: var(--color-fuchsia-600); /* Slightly more maroon and a little lighter */
   
   /* Accent color - for highlights and CTAs */
-  --color-brand-accent: #ffd18c; /* Brighter, light coral with an orange hue for vivid contrast */
+  --color-brand-accent: var(--color-sky-400); /* Brighter, light coral with an orange hue for vivid contrast */
+  --color-brand-accent-dark: var(--color-sky-600); /* Brighter, light coral with an orange hue for vivid contrast */
   
   /* Neutral brand colors (optional) */
-  --color-brand-dark: #1e293b; /* Example: dark slate - replace with your color */
-  --color-brand-light: #f1f5f9; /* Example: light slate - replace with your color */
+  --color-brand-neutral-secondary-dark: var(--color-rose-950); /* Example: dark slate - replace with your color */
+  --color-brand-neutral-primary-dark: var(--color-sky-950); /* Example: dark slate - replace with your color */
+  --color-brand-neutral-secondary-light: var(--color-rose-100); /* Example: light slate - replace with your color */
+  --color-brand-neutral-primary-light: var(--color-sky-50); /* Example: light slate - replace with your color */
   
   /* 
     Optional: Define color shades for more flexibility

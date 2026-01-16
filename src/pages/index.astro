@@ -17,7 +17,7 @@ import '../styles/global.css';
 		- from-blue-50: gradient starts with light blue color
 		- to-indigo-100: gradient ends with light indigo color
 	-->
-	<body class="min-h-screen bg-gradient-to-br from-blue-50 to-red-100">
+	<body class="min-h-screen bg-gradient-to-br from-brand-neutral-primary-light to-brand-neutral-secondary-light dark:from-brand-neutral-primary-dark dark:to-brand-neutral-secondary-dark text-black dark:text-white">
 		<!-- 
 			main classes:
 			- container: sets max-width based on breakpoint (responsive container)
@@ -41,7 +41,7 @@ import '../styles/global.css';
 					- text-gray-900: dark gray text color
 					- mb-4: margin bottom of 1rem (16px)
 				-->
-				<h1 class="text-5xl font-bold text-gray-900 mb-4">
+				<h1 class="text-5xl font-bold text-brand-primary dark:text-brand-primary-dark mb-4">
 					Tailwind CSS Test
 				</h1>
 				<!-- 
@@ -49,7 +49,7 @@ import '../styles/global.css';
 					- text-xl: font size of 1.25rem (20px)
 					- text-gray-600: medium gray text color
 				-->
-				<p class="text-xl text-gray-600">
+				<p class="text-xl">
 					If you can see styled content below, Tailwind is working! 🎉
 				</p>
 			</header>
@@ -71,7 +71,7 @@ import '../styles/global.css';
 					- text-indigo-600: indigo text color
 					- mb-4: margin bottom of 1rem (16px)
 				-->
-				<h2 class="text-3xl font-semibold text-indigo-600 mb-4">
+				<h2 class="text-3xl font-semibold text-brand-primary dark:text-brand-primary-dark mb-4">
 					Sample Card Component
 				</h2>
 				<!-- 
@@ -100,7 +100,7 @@ import '../styles/global.css';
 						- transition-colors: smooth color transitions
 						- duration-200: transition duration of 200ms
 					-->
-					<button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200">
+					<button class="bg-gradient-to-br from-brand-primary to-brand-primary-dark hover:from-brand-primary-dark hover:to-brand-secondary-dark text-white font-semibold py-2 px-6 rounded-lg transition cursor-pointer hover:shadow-lg hover:scale-110 duration-200 ease-in-out">
 						Primary Button
 					</button>
 					<!-- 
@@ -115,8 +115,11 @@ import '../styles/global.css';
 						- transition-colors: smooth color transitions
 						- duration-200: transition duration of 200ms
 					-->
-					<button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-6 rounded-lg transition-colors duration-200">
+					<button class="bg-gradient-to-br from-brand-secondary to-brand-secondary-dark hover:from-brand-secondary-dark hover:to-brand-accent-dark text-white font-semibold py-2 px-6 rounded-lg transition duration-200 cursor-pointer hover:shadow-lg ease-in-out hover:scale-110">
 						Secondary Button
+					</button>
+					<button class="bg-gradient-to-br from-brand-accent to-brand-accent-dark hover:from-brand-accent-dark hover:to-brand-primary-dark text-white font-semibold py-2 px-6 rounded-lg transition duration-200 cursor-pointer hover:shadow-lg ease-in-out hover:scale-110">
+						Accent Button
 					</button>
 				</div>
 			</div>
@@ -140,14 +143,14 @@ import '../styles/global.css';
 					- p-6: padding of 1.5rem (24px) on all sides
 					- text-white: white text color
 				-->
-				<div class="group bg-gradient-to-br from-brand-primary to-brand-secondary rounded-lg p-6 cursor-pointer transform motion-safe:hover:scale-110 duration-300 ease-in-out">
+				<div class="group bg-gradient-to-br from-brand-primary dark:from-brand-primary-dark to-brand-secondary dark:to-brand-secondary-dark rounded-lg p-6 cursor-pointer transform motion-safe:hover:scale-110 duration-300 ease-in-out">
 					<!-- 
 						h3 classes:
 						- text-xl: font size of 1.25rem (20px)
 						- font-bold: font weight of 700
 						- mb-2: margin bottom of 0.5rem (8px)
 					-->
-					<h3 class="text-brand-accent text-xl font-bold mb-2 group-hover:text-black duration-300">Card 1</h3>
+					<h3 class="text-white text-xl font-bold mb-2 group-hover:text-black duration-300">Card 1</h3>
 					<!-- 
 						p classes:
 						- text-purple-50: very light purple text color
