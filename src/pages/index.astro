@@ -1,32 +1,17 @@
 ---
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
+<Layout title="Home - Portfolio" description="Nate Taylor's Portfolio Website">
 	<!-- 
-		body classes:
-		- min-h-screen: minimum height of 100vh (full viewport height)
-		- bg-gradient-to-br: background gradient from top-left to bottom-right
-		- from-blue-50: gradient starts with light blue color
-		- to-indigo-100: gradient ends with light indigo color
+		main classes:
+		- container: sets max-width based on breakpoint (responsive container)
+		- mx-auto: horizontal margin auto (centers the container)
+		- px-4: horizontal padding of 1rem (16px)
+		- py-12: vertical padding of 3rem (48px)
+		- max-w-4xl: maximum width of 56rem (896px)
 	-->
-	<body class="min-h-screen bg-gradient-to-br from-brand-neutral-primary-light to-brand-neutral-secondary-light dark:from-brand-neutral-primary-dark dark:to-brand-neutral-secondary-dark text-black dark:text-white">
-		<!-- 
-			main classes:
-			- container: sets max-width based on breakpoint (responsive container)
-			- mx-auto: horizontal margin auto (centers the container)
-			- px-4: horizontal padding of 1rem (16px)
-			- py-12: vertical padding of 3rem (48px)
-			- max-w-4xl: maximum width of 56rem (896px)
-		-->
-		<main class="container mx-auto px-4 py-12 max-w-4xl overflow-x-hidden">
+	<main class="container mx-auto px-4 py-12 max-w-4xl overflow-x-hidden">
 			<!-- Header Section -->
 			<!-- 
 				header classes:
@@ -310,5 +295,4 @@ import '../styles/global.css';
 				</code>
 			</div>
 		</main>
-	</body>
-</html>
+</Layout>

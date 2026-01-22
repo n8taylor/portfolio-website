@@ -1,0 +1,31 @@
+---
+// Layout component - wraps all pages with navigation and common structure
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = "Portfolio", description = "My portfolio website" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen bg-gradient-to-br from-brand-neutral-primary-light to-brand-neutral-secondary-light dark:from-brand-neutral-primary-dark dark:to-brand-neutral-secondary-dark text-black dark:text-white">
+		<!-- Navigation - appears on every page -->
+		<Navigation />
+		
+		<!-- Page content -->
+		<slot />
+	</body>
+</html>
