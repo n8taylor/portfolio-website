@@ -1,6 +1,7 @@
 ---
 // Layout component - wraps all pages with navigation and common structure
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -21,11 +22,16 @@ const { title = "Portfolio", description = "My portfolio website" } = Astro.prop
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="min-h-screen bg-gradient-to-br from-brand-neutral-primary-light to-brand-neutral-secondary-light dark:from-brand-neutral-primary-dark dark:to-brand-neutral-secondary-dark text-black dark:text-white">
+	<body class="min-h-screen bg-gradient-to-br from-brand-neutral-primary-light to-brand-neutral-secondary-light dark:from-brand-neutral-primary-dark dark:to-brand-neutral-secondary-dark text-black dark:text-white flex flex-col">
 		<!-- Navigation - appears on every page -->
 		<Navigation />
 		
 		<!-- Page content -->
-		<slot />
+		<div class="flex-grow">
+			<slot />
+		</div>
+		
+		<!-- Footer - appears on every page -->
+		<Footer />
 	</body>
 </html>

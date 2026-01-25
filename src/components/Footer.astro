@@ -1,0 +1,79 @@
+---
+// Footer component - appears on every page
+---
+
+<footer class="bg-white dark:bg-brand-background-dark border-t border-gray-200 dark:border-gray-700 mt-auto">
+	<div class="container mx-auto px-4 py-8">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<!-- Brand/About Section -->
+			<div>
+				<h3 class="text-brand-primary dark:text-brand-primary-dark font-heading font-bold text-lg mb-4">
+					Portfolio
+				</h3>
+				<p class="text-gray-600 dark:text-brand-body-dark text-sm">
+					Web UX/UI Project Manager creating beautiful and functional digital experiences.
+				</p>
+			</div>
+
+			<!-- Quick Links Section -->
+			<div>
+				<h3 class="text-gray-900 dark:text-white font-heading font-bold text-lg mb-4">
+					Quick Links
+				</h3>
+				<ul class="space-y-2">
+					<li>
+						<a href="/" class="text-gray-600 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors text-sm">
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="/about" class="text-gray-600 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors text-sm">
+							About
+						</a>
+					</li>
+					<li>
+						<a href="/projects" class="text-gray-600 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors text-sm">
+							Projects
+						</a>
+					</li>
+					<li>
+						<a href="/contact" class="text-gray-600 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors text-sm">
+							Contact
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Contact/Social Section -->
+			<div>
+				<h3 class="text-gray-900 dark:text-white font-heading font-bold text-lg mb-4">
+					Connect
+				</h3>
+				<ul class="space-y-2">
+					<li>
+						<a href="mailto:your.email@example.com" class="text-gray-600 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors text-sm">
+							Email
+						</a>
+					</li>
+					<li>
+						<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors text-sm">
+							LinkedIn
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors text-sm">
+							GitHub
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Copyright Section -->
+		<div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
+			<p class="text-gray-500 dark:text-gray-400 text-sm">
+				&copy; {new Date().getFullYear()} Portfolio. All rights reserved.
+			</p>
+		</div>
+	</div>
+</footer>
