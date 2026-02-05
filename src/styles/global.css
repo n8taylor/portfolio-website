@@ -93,3 +93,15 @@ h1 {
 .header-text-shadow {
   text-shadow: 0 0 12px rgba(0,0,0,0.65), 0 0 24px rgba(0,0,0,0.40);
 }
+
+/* Tiled n8 logo background using only CSS + the short logo SVG */
+.bg-n8-pattern {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("/fat-logo-offset-rows copy.svg");
+  background-repeat: repeat;
+  /* Increase tile height slightly above logo height to add spacing between rows */
+  background-size: auto 128px;
+}
+
+:global(.dark) .bg-n8-pattern {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url("/fat-logo-offset-rows copy.svg");
+}
