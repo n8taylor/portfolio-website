@@ -18,8 +18,8 @@
 				<a href="/about" class="nav-link text-gray-700 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors font-medium">
 					About
 				</a>
-				<a href="/projects" class="nav-link text-gray-700 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors font-medium">
-					Projects
+				<a href="/#work" class="nav-link text-gray-700 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors font-medium">
+					Work
 				</a>
 				<a href="/contact" class="nav-link text-gray-700 dark:text-brand-body-dark hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors font-medium">
 					Contact
@@ -27,7 +27,7 @@
 			</div>
 
 			<!-- Mobile Menu Button -->
-			<button 
+			<button
 				id="mobile-menu-button"
 				class="nav-link md:hidden text-brand-primary dark:text-white hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors"
 				aria-label="Toggle menu"
@@ -47,8 +47,8 @@
 				<a href="/about" class="nav-link text-brand-primary dark:text-white hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors font-medium py-2 px-4 rounded hover:bg-white/10 dark:hover:bg-gray-800/50">
 					About
 				</a>
-				<a href="/projects" class="nav-link text-brand-primary dark:text-white hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors font-medium py-2 px-4 rounded hover:bg-white/10 dark:hover:bg-gray-800/50">
-					Projects
+				<a href="/#work" class="nav-link text-brand-primary dark:text-white hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors font-medium py-2 px-4 rounded hover:bg-white/10 dark:hover:bg-gray-800/50">
+					Work
 				</a>
 				<a href="/contact" class="nav-link text-brand-primary dark:text-white hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors font-medium py-2 px-4 rounded hover:bg-white/10 dark:hover:bg-gray-800/50">
 					Contact
@@ -71,35 +71,19 @@
 
 	// Scroll detection for navigation background
 	const nav = document.getElementById('main-nav');
-	const navLinks = document.querySelectorAll('.nav-link');
-	
+
 	function handleScroll() {
 		if (!nav) return;
-		
-		const scrolled = window.scrollY > 20; // Change threshold as needed
-		
+
+		const scrolled = window.scrollY > 20;
+
 		if (scrolled) {
-			// Add background, shadow, and border when scrolled
 			nav.classList.add('bg-white', 'dark:bg-brand-background-dark', 'shadow-md');
-			// Change text colors to dark for better contrast
-			// navLinks.forEach(link => {
-			// 	link.classList.remove('text-white', 'dark:text-white');
-			// 	link.classList.add('text-gray-700', 'dark:text-brand-body-dark');
-			// });
 		} else {
-			// Remove background, shadow, and border when at top
 			nav.classList.remove('bg-white', 'dark:bg-brand-background-dark', 'shadow-md');
-			// Change text colors back to white
-			// navLinks.forEach(link => {
-			// 	link.classList.remove('text-gray-700', 'dark:text-brand-body-dark');
-			// 	link.classList.add('text-white', 'dark:text-white');
-			// });
 		}
 	}
 
-	// Run on load to handle initial scroll position
 	handleScroll();
-	
-	// Listen for scroll events
 	window.addEventListener('scroll', handleScroll);
 </script>

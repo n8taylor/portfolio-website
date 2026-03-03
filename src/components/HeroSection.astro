@@ -1,0 +1,58 @@
+---
+// HeroSection.astro — Full-width homepage hero with elevator pitch
+---
+
+<section class="relative min-h-[85vh] flex items-center overflow-hidden">
+  <!-- Decorative background: n8 pattern + gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-neutral-primary-light to-brand-neutral-secondary-light dark:from-brand-neutral-primary-dark dark:to-brand-neutral-secondary-dark">
+    <div class="absolute inset-0 bg-n8-pattern opacity-30 dark:opacity-10"></div>
+  </div>
+
+  <!-- Decorative large n8 logo — faded, right-aligned -->
+  <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 dark:opacity-[0.03] pointer-events-none select-none hidden lg:block">
+    <img src="/fat-logo-offset-rows.svg" alt="" class="h-[600px] w-auto" aria-hidden="true" />
+  </div>
+
+  <!-- Content -->
+  <div class="relative container mx-auto px-4 py-24 max-w-5xl">
+    <div class="max-w-2xl">
+      <!-- Eyebrow label -->
+      <p class="text-brand-accent dark:text-brand-accent font-semibold text-sm uppercase tracking-widest mb-4">
+        UX / UI Portfolio
+      </p>
+
+      <!-- Name -->
+      <h1 class="text-6xl md:text-7xl font-bold text-brand-primary dark:text-brand-primary-dark mb-3 header-text-shadow leading-tight">
+        Nate Taylor
+      </h1>
+
+      <!-- Role -->
+      <p class="text-2xl md:text-3xl font-bold text-brand-secondary dark:text-brand-body-dark mb-6">
+        Web UX/UI Project Manager
+      </p>
+
+      <!-- Elevator pitch -->
+      <p class="text-lg md:text-xl text-gray-700 dark:text-brand-body-dark leading-relaxed mb-8 max-w-xl">
+        I bridge the gap between user needs and business goals — designing
+        intuitive interfaces, leading design systems, and shipping experiences
+        that people actually enjoy using.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="#work"
+          class="bg-gradient-to-br from-brand-primary to-brand-primary-dark hover:from-brand-primary-dark hover:to-brand-accent-dark text-white font-semibold py-3 px-8 rounded-lg transition hover:shadow-lg hover:scale-105 duration-200 ease-in-out"
+        >
+          See My Work
+        </a>
+        <a
+          href="/about"
+          class="border-2 border-brand-primary dark:border-brand-primary-dark text-brand-primary dark:text-brand-primary-dark hover:bg-brand-primary hover:text-white dark:hover:bg-brand-primary-dark dark:hover:text-white font-semibold py-3 px-8 rounded-lg transition duration-200 ease-in-out"
+        >
+          About Me
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

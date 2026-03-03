@@ -1,0 +1,74 @@
+---
+// SkillsSection.astro — Grouped skill tags for the About page
+
+interface SkillGroup {
+  category: string;
+  skills: string[];
+}
+
+const skillGroups: SkillGroup[] = [
+  {
+    category: "Disciplines",
+    skills: [
+      "UX Research",
+      "Interaction Design",
+      "Visual Design",
+      "Information Architecture",
+      "Usability Testing",
+      "Accessibility (WCAG)",
+      "Design Systems",
+      "Prototyping",
+    ],
+  },
+  {
+    category: "Tools",
+    skills: [
+      "Figma",
+      "Adobe XD",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Miro",
+      "InVision",
+    ],
+  },
+  {
+    category: "Methods",
+    skills: [
+      "User Interviews",
+      "Wireframing",
+      "Journey Mapping",
+      "Card Sorting",
+      "Heuristic Evaluation",
+      "Agile / Scrum",
+    ],
+  },
+  {
+    category: "Development (Collaboration)",
+    skills: ["HTML / CSS", "Tailwind CSS", "Astro", "Git"],
+  },
+];
+---
+
+<section class="py-16">
+  <div class="mb-10">
+    <p class="text-brand-accent font-semibold text-sm uppercase tracking-widest mb-2">Skills</p>
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">What I Bring</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    {skillGroups.map((group) => (
+      <div>
+        <h3 class="text-sm font-bold text-brand-secondary dark:text-brand-body-dark uppercase tracking-widest mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
+          {group.category}
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {group.skills.map((skill) => (
+            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-brand-body-dark text-sm px-3 py-1.5 rounded-full font-medium">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

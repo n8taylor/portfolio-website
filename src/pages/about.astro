@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SkillsSection from '../components/SkillsSection.astro';
+import Timeline from '../components/Timeline.astro';
+---
+
+<Layout title="About — Nate Taylor" description="Learn more about Nate Taylor, Web UX/UI Project Manager at Utah State University, and his path toward UI, Visual, and Interaction Design roles.">
+
+  <!-- Page Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-neutral-primary-light to-brand-neutral-secondary-light dark:from-brand-neutral-primary-dark dark:to-brand-neutral-secondary-dark py-24">
+    <div class="absolute inset-0 bg-n8-pattern opacity-20 dark:opacity-10 pointer-events-none"></div>
+    <div class="relative container mx-auto px-4 max-w-5xl">
+      <p class="text-brand-accent font-semibold text-sm uppercase tracking-widest mb-3">About Me</p>
+      <h1 class="text-5xl md:text-6xl font-bold text-brand-primary dark:text-brand-primary-dark mb-4 header-text-shadow">
+        Nate Taylor
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-brand-body-dark max-w-xl">
+        Designer, project manager, and advocate for experiences that put people first.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <div class="container mx-auto px-4 max-w-5xl">
+
+    <!-- Bio -->
+    <section class="py-16 border-b border-gray-200 dark:border-gray-700">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        <!-- Branded avatar placeholder -->
+        <div class="flex justify-center md:justify-start">
+          <div class="w-48 h-48 rounded-2xl bg-gradient-to-br from-brand-primary to-brand-accent flex items-center justify-center shadow-lg">
+            <img src="/n8-logo-solid-1.svg" alt="" class="h-24 w-auto opacity-90" aria-hidden="true" />
+          </div>
+        </div>
+
+        <!-- Bio text -->
+        <div class="md:col-span-2">
+          <p class="text-brand-accent font-semibold text-sm uppercase tracking-widest mb-3">Background</p>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Who I Am</h2>
+
+          <div class="prose prose-lg dark:prose-invert max-w-none space-y-4 text-gray-700 dark:text-brand-body-dark leading-relaxed">
+            <p>
+              I'm a Web UX/UI Project Manager at Utah State University, where I lead design and
+              digital experience initiatives across web properties. My work sits at the intersection
+              of design strategy, visual craft, and project execution — translating complex user needs
+              into clean, intuitive interfaces.
+            </p>
+            <p>
+              My approach is grounded in user research and guided by a strong visual sensibility.
+              I believe good design isn't just about how something looks — it's about how it works,
+              how it feels, and whether it solves a real problem for a real person.
+            </p>
+            <p>
+              I'm actively seeking roles as a UI Designer, Visual Designer, or Interaction Designer
+              where I can focus more deeply on the craft of design and continue pushing the quality
+              of digital experiences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <div class="border-b border-gray-200 dark:border-gray-700">
+      <SkillsSection />
+    </div>
+
+    <!-- Timeline -->
+    <Timeline />
+
+    <!-- CTA -->
+    <section class="py-16 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Let's Connect</h2>
+      <p class="text-gray-600 dark:text-brand-body-dark mb-8 max-w-md mx-auto">
+        Interested in working together or just want to chat about design? I'd love to hear from you.
+      </p>
+      <a
+        href="/contact"
+        class="bg-gradient-to-br from-brand-primary to-brand-primary-dark hover:from-brand-primary-dark hover:to-brand-accent-dark text-white font-semibold py-3 px-8 rounded-lg transition hover:shadow-lg hover:scale-105 duration-200 ease-in-out"
+      >
+        Get in Touch
+      </a>
+    </section>
+
+  </div>
+</Layout>

@@ -1,303 +1,83 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+const allCaseStudies = await getCollection('case-studies');
+const caseStudies = allCaseStudies.sort(
+  (a: CollectionEntry<'case-studies'>, b: CollectionEntry<'case-studies'>) =>
+    (a.data.order ?? 99) - (b.data.order ?? 99)
+);
 ---
 
-<Layout title="Home - Portfolio" description="Nate Taylor's Portfolio Website">
-	<!-- 
-		main classes:
-		- container: sets max-width based on breakpoint (responsive container)
-		- mx-auto: horizontal margin auto (centers the container)
-		- px-4: horizontal padding of 1rem (16px)
-		- py-12: vertical padding of 3rem (48px)
-		- max-w-4xl: maximum width of 56rem (896px)
-	-->
-	<main class="container mx-auto px-4 py-12 max-w-4xl overflow-x-hidden">
-			<!-- Header Section -->
-			<!-- 
-				header classes:
-				- text-center: centers text horizontally
-				- mb-12: margin bottom of 3rem (48px)
-			-->
-			<header class="text-center mb-12">
-				<!-- 
-					h1 classes:
-					- text-5xl: font size of 3rem (48px)
-					- font-bold: font weight of 700
-					- text-gray-900: dark gray text color
-					- mb-4: margin bottom of 1rem (16px)
-				-->
-				<h1 class="text-7xl font-bold text-brand-primary mb-4">
-					Nate Taylor
-				</h1>
-				<p class="text-5xl font-bold text-brand-secondary mb-4">
-					Web UX/UI Project Manager
-				</p>
-				<!-- 
-					p classes:
-					- text-xl: font size of 1.25rem (20px)
-					- text-gray-600: medium gray text color
-				-->
-				<p class="text-xl">
-					If you can see styled content below, Tailwind is working! 🎉
-				</p>
-			</header>
+<Layout title="Nate Taylor — UX/UI Portfolio" description="Portfolio of Nate Taylor, Web UX/UI Project Manager at Utah State University. Targeting UI Designer, Visual Designer, and Interaction Designer roles.">
 
-			<!-- Card Section -->
-			<!-- 
-				div classes:
-				- bg-white: white background color
-				- rounded-lg: border radius of 0.5rem (8px)
-				- shadow-lg: large box shadow
-				- p-8: padding of 2rem (32px) on all sides
-				- mb-8: margin bottom of 2rem (32px)
-			-->
-			<div class="bg-white dark:bg-brand-background-dark rounded-lg shadow-lg p-8 mb-8">
-				<!-- 
-					h2 classes:
-					- text-3xl: font size of 1.875rem (30px)
-					- font-semibold: font weight of 600
-					- text-indigo-600: indigo text color
-					- mb-4: margin bottom of 1rem (16px)
-				-->
-				<h2 class="text-3xl font-semibold text-brand-primary mb-4">
-					Sample Card Component
-				</h2>
-				<h2 class="text-3xl font-semibold text-brand-secondary mb-4">
-					Sample Card Component
-				</h2>
-				<h2 class="text-3xl font-semibold text-brand-accent mb-4">
-					Sample Card Component
-				</h2>
-				<!-- 
-					p classes:
-					- text-gray-700: dark gray text color
-					- mb-4: margin bottom of 1rem (16px)
-				-->
-				<p class="text-gray-700 dark:text-brand-body-dark mb-4">
-					This is a card with rounded corners, shadow, and padding. Tailwind makes it easy to create beautiful UI components.
-				</p>
-				<!-- 
-					div classes:
-					- flex: display flex (flexbox layout)
-					- gap-4: gap of 1rem (16px) between flex items
-				-->
-				<div class="flex gap-4 flex-wrap">
-					<!-- 
-						button classes:
-						- bg-indigo-600: indigo background color
-						- hover:bg-indigo-700: darker indigo on hover
-						- text-white: white text color
-						- font-semibold: font weight of 600
-						- py-2: vertical padding of 0.5rem (8px)
-						- px-6: horizontal padding of 1.5rem (24px)
-						- rounded-lg: border radius of 0.5rem (8px)
-						- transition-colors: smooth color transitions
-						- duration-200: transition duration of 200ms
-					-->
-					<button class="bg-gradient-to-br from-brand-primary to-brand-primary-dark hover:from-brand-primary-dark hover:to-brand-accent-dark text-white font-semibold py-2 px-6 rounded-lg transition cursor-pointer hover:shadow-lg hover:scale-110 duration-200 ease-in-out">
-						Primary Button
-					</button>
-					<!-- 
-						button classes:
-						- bg-gray-200: light gray background
-						- hover:bg-gray-300: slightly darker gray on hover
-						- text-gray-800: dark gray text
-						- font-semibold: font weight of 600
-						- py-2: vertical padding of 0.5rem (8px)
-						- px-6: horizontal padding of 1.5rem (24px)
-						- rounded-lg: border radius of 0.5rem (8px)
-						- transition-colors: smooth color transitions
-						- duration-200: transition duration of 200ms
-					-->
-					<button class="bg-gradient-to-br from-brand-secondary to-brand-secondary-dark hover:from-brand-secondary-dark hover:to-brand-primary-dark text-white font-semibold py-2 px-6 rounded-lg transition duration-200 cursor-pointer hover:shadow-lg ease-in-out hover:scale-110">
-						Secondary Button
-					</button>
-					<button class="bg-gradient-to-br from-brand-accent to-brand-accent-dark hover:from-brand-accent-dark hover:to-brand-primary-dark text-white font-semibold py-2 px-6 rounded-lg transition duration-200 cursor-pointer hover:shadow-lg ease-in-out hover:scale-110">
-						Accent Button
-					</button>
-				</div>
-			</div>
+  <!-- Hero -->
+  <HeroSection />
 
-			<!-- Grid Section -->
-			<!-- 
-				div classes:
-				- grid: display grid (CSS grid layout)
-				- grid-cols-1: 1 column on mobile (default)
-				- md:grid-cols-3: 3 columns on medium screens and up (768px+)
-				- gap-6: gap of 1.5rem (24px) between grid items
-				- mb-8: margin bottom of 2rem (32px)
-			-->
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-				<!-- 
-					div classes:
-					- bg-gradient-to-br: gradient from top-left to bottom-right
-					- from-purple-400: gradient starts with purple
-					- to-pink-400: gradient ends with pink
-					- rounded-lg: border radius of 0.5rem (8px)
-					- p-6: padding of 1.5rem (24px) on all sides
-					- text-white: white text color
-				-->
-				<div class="group bg-gradient-to-br from-brand-primary dark:from-brand-primary-dark to-brand-secondary dark:to-brand-secondary-dark rounded-lg p-6 cursor-pointer transform motion-safe:hover:scale-110 duration-300 ease-in-out">
-					<!-- 
-						h3 classes:
-						- text-xl: font size of 1.25rem (20px)
-						- font-bold: font weight of 700
-						- mb-2: margin bottom of 0.5rem (8px)
-					-->
-					<h3 class="text-white text-xl font-bold mb-2 group-hover:text-black duration-300">Card 1</h3>
-					<!-- 
-						p classes:
-						- text-purple-50: very light purple text color
-					-->
-					<p class="text-purple-50 group-hover:text-purple-900 duration-300">Gradient background with responsive grid</p>
-				</div>
-				<!-- 
-					div classes:
-					- bg-gradient-to-br: gradient from top-left to bottom-right
-					- from-blue-400: gradient starts with blue
-					- to-cyan-400: gradient ends with cyan
-					- rounded-lg: border radius of 0.5rem (8px)
-					- p-6: padding of 1.5rem (24px) on all sides
-					- text-white: white text color
-				-->
-				<div class="bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg p-6 text-white">
-					<h3 class="text-xl font-bold mb-2">Card 2</h3>
-					<!-- 
-						p classes:
-						- text-blue-50: very light blue text color
-					-->
-					<p class="text-blue-50">Responsive design in action</p>
-				</div>
-				<!-- 
-					div classes:
-					- bg-gradient-to-br: gradient from top-left to bottom-right
-					- from-green-400: gradient starts with green
-					- to-emerald-400: gradient ends with emerald
-					- rounded-lg: border radius of 0.5rem (8px)
-					- p-6: padding of 1.5rem (24px) on all sides
-					- text-white: white text color
-				-->
-				<div class="bg-gradient-to-br from-green-400 to-emerald-400 rounded-lg p-6 text-white">
-					<h3 class="text-xl font-bold mb-2">Card 3</h3>
-					<!-- 
-						p classes:
-						- text-green-50: very light green text color
-					-->
-					<p class="text-green-50">Mobile-first approach</p>
-				</div>
-			</div>
+  <!-- Stats strip -->
+  <StatsStrip />
 
-			<!-- Badge Section -->
-			<!-- 
-				div classes:
-				- flex: display flex (flexbox layout)
-				- flex-wrap: allows items to wrap to next line
-				- gap-2: gap of 0.5rem (8px) between items
-				- mb-8: margin bottom of 2rem (32px)
-			-->
-			<div class="flex flex-wrap gap-2 mb-8">
-				<!-- 
-					span classes:
-					- bg-red-100: light red background
-					- text-red-800: dark red text
-					- px-3: horizontal padding of 0.75rem (12px)
-					- py-1: vertical padding of 0.25rem (4px)
-					- rounded-full: fully rounded (pill shape)
-					- text-sm: font size of 0.875rem (14px)
-					- font-medium: font weight of 500
-				-->
-				<span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Red Badge</span>
-				<!-- 
-					span classes:
-					- bg-yellow-100: light yellow background
-					- text-yellow-800: dark yellow text
-					- px-3: horizontal padding of 0.75rem (12px)
-					- py-1: vertical padding of 0.25rem (4px)
-					- rounded-full: fully rounded (pill shape)
-					- text-sm: font size of 0.875rem (14px)
-					- font-medium: font weight of 500
-				-->
-				<span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Yellow Badge</span>
-				<!-- 
-					span classes:
-					- bg-green-100: light green background
-					- text-green-800: dark green text
-					- px-3: horizontal padding of 0.75rem (12px)
-					- py-1: vertical padding of 0.25rem (4px)
-					- rounded-full: fully rounded (pill shape)
-					- text-sm: font size of 0.875rem (14px)
-					- font-medium: font weight of 500
-				-->
-				<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Green Badge</span>
-				<!-- 
-					span classes:
-					- bg-blue-100: light blue background
-					- text-blue-800: dark blue text
-					- px-3: horizontal padding of 0.75rem (12px)
-					- py-1: vertical padding of 0.25rem (4px)
-					- rounded-full: fully rounded (pill shape)
-					- text-sm: font size of 0.875rem (14px)
-					- font-medium: font weight of 500
-				-->
-				<span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Blue Badge</span>
-			</div>
+  <!-- Selected Work -->
+  <section id="work" class="container mx-auto px-4 py-20 max-w-5xl">
+    <div class="mb-12 text-center">
+      <p class="text-brand-accent font-semibold text-sm uppercase tracking-widest mb-2">Portfolio</p>
+      <h2 class="text-4xl font-bold text-gray-900 dark:text-white">Selected Work</h2>
+    </div>
 
-			<!-- Typography Section -->
-			<!-- 
-				div classes:
-				- bg-white: white background color
-				- rounded-lg: border radius of 0.5rem (8px)
-				- shadow-md: medium box shadow
-				- p-6: padding of 1.5rem (24px) on all sides
-			-->
-			<div class="bg-n8-pattern rounded-lg shadow-md p-6">
-				<!-- 
-					h2 classes:
-					- text-2xl: font size of 1.5rem (24px)
-					- font-bold: font weight of 700
-					- text-gray-900: very dark gray text
-					- mb-4: margin bottom of 1rem (16px)
-				-->
-				<h2 class="text-2xl font-bold text-gray-900 mb-4">Typography Examples</h2>
-				<!-- 
-					p classes:
-					- text-lg: font size of 1.125rem (18px)
-					- text-gray-700: dark gray text
-					- mb-2: margin bottom of 0.5rem (8px)
-				-->
-				<p class="text-lg text-gray-700 mb-2">Large paragraph text</p>
-				<!-- 
-					p classes:
-					- text-base: font size of 1rem (16px) - default size
-					- text-gray-600: medium gray text
-					- mb-2: margin bottom of 0.5rem (8px)
-				-->
-				<p class="text-base text-gray-600 mb-2">Base paragraph text</p>
-				<!-- 
-					p classes:
-					- text-sm: font size of 0.875rem (14px)
-					- text-gray-500: medium-light gray text
-					- mb-4: margin bottom of 1rem (16px)
-				-->
-				<p class="text-sm text-gray-500 mb-4">Small paragraph text</p>
-				<!-- 
-					code classes:
-					- bg-gray-100: light gray background
-					- text-gray-800: dark gray text
-					- px-2: horizontal padding of 0.5rem (8px)
-					- py-1: vertical padding of 0.25rem (4px)
-					- rounded: border radius of 0.25rem (4px)
-					- text-sm: font size of 0.875rem (14px)
-					- font-mono: monospace font family
-				-->
-				<code class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono">
-					Inline code example
-				</code>
-			</div>
-		</main>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {caseStudies.map((cs: CollectionEntry<'case-studies'>) => (
+        <CaseStudyCard
+          title={cs.data.title}
+          description={cs.data.description}
+          role={cs.data.role}
+          tags={cs.data.tags}
+          href={`/case-studies/${cs.slug}`}
+          coverImage={cs.data.coverImage}
+          coverColor={cs.data.coverColor}
+          status={cs.data.status}
+        />
+      ))}
+    </div>
+  </section>
 
-		<!-- Full-width banner above footer (home page only) -->
-		<div class="w-full overflow-hidden">
-			<img src="/footer-banner.png" alt="" class="w-full object-cover object-center block" />
-		</div>
+  <!-- About Teaser -->
+  <section class="bg-white dark:bg-brand-background-dark border-t border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto px-4 py-20 max-w-5xl">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <!-- Branded graphic placeholder -->
+        <div class="flex-shrink-0 w-40 h-40 rounded-full bg-gradient-to-br from-brand-primary to-brand-accent flex items-center justify-center shadow-lg">
+          <img src="/n8-logo-solid-1.svg" alt="" class="h-20 w-auto opacity-90" aria-hidden="true" />
+        </div>
+        <div>
+          <p class="text-brand-accent font-semibold text-sm uppercase tracking-widest mb-2">About</p>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Designer + Project Manager
+          </h2>
+          <p class="text-gray-600 dark:text-brand-body-dark leading-relaxed mb-6 max-w-lg">
+            I've spent the last several years at Utah State University leading UX/UI initiatives —
+            from research and wireframing to final visual design and implementation.
+            I care deeply about making things usable, accessible, and beautiful.
+          </p>
+          <a
+            href="/about"
+            class="inline-flex items-center gap-2 text-brand-primary dark:text-brand-primary-dark font-semibold hover:gap-3 transition-all duration-200"
+          >
+            Read more about me
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer banner image -->
+  <div class="w-full overflow-hidden">
+    <img src="/footer-banner.png" alt="" class="w-full object-cover object-center block" />
+  </div>
+
 </Layout>

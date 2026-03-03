@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactInfo from '../components/ContactInfo.astro';
+---
+
+<Layout title="Contact — Nate Taylor" description="Get in touch with Nate Taylor — designer, UX/UI project manager, and collaborator.">
+
+  <!-- Page Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-neutral-primary-light to-brand-neutral-secondary-light dark:from-brand-neutral-primary-dark dark:to-brand-neutral-secondary-dark py-24">
+    <div class="absolute inset-0 bg-n8-pattern opacity-20 dark:opacity-10 pointer-events-none"></div>
+    <div class="relative container mx-auto px-4 max-w-5xl text-center">
+      <p class="text-brand-accent font-semibold text-sm uppercase tracking-widest mb-3">Contact</p>
+      <h1 class="text-5xl md:text-6xl font-bold text-brand-primary dark:text-brand-primary-dark mb-4 header-text-shadow">
+        Let's Talk
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-brand-body-dark max-w-lg mx-auto">
+        Whether you have a project in mind, a role to discuss, or just want to connect — I'm always happy to chat.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact cards -->
+  <section class="container mx-auto px-4 py-20 max-w-4xl">
+    <ContactInfo />
+  </section>
+
+</Layout>

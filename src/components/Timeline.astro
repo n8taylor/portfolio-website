@@ -1,0 +1,90 @@
+---
+// Timeline.astro — Vertical career timeline for the About page
+
+interface TimelineEntry {
+  role: string;
+  org: string;
+  orgUrl?: string;
+  dateRange: string;
+  highlights: string[];
+}
+
+const entries: TimelineEntry[] = [
+  {
+    role: "Web UX/UI Project Manager",
+    org: "Utah State University",
+    orgUrl: "https://usu.edu",
+    dateRange: "20XX – Present",
+    highlights: [
+      "Lead UX/UI design and project management for university web properties.",
+      "Drive design system adoption and accessibility compliance across teams.",
+      "Collaborate with developers, stakeholders, and content strategists to ship user-centered experiences.",
+    ],
+  },
+  {
+    role: "Previous Role Title",
+    org: "Previous Organization",
+    dateRange: "20XX – 20XX",
+    highlights: [
+      "Key achievement or responsibility here.",
+      "Another notable contribution or skill demonstrated.",
+    ],
+  },
+  {
+    role: "Earlier Role Title",
+    org: "Earlier Organization",
+    dateRange: "20XX – 20XX",
+    highlights: [
+      "Key achievement or responsibility here.",
+    ],
+  },
+];
+---
+
+<section class="py-16">
+  <div class="mb-10">
+    <p class="text-brand-accent font-semibold text-sm uppercase tracking-widest mb-2">Experience</p>
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Career Timeline</h2>
+  </div>
+
+  <ol class="relative border-l-2 border-brand-primary/30 dark:border-brand-primary-dark/30 ml-4 space-y-10">
+    {entries.map((entry, i) => (
+      <li class="ml-8">
+        <!-- Timeline dot -->
+        <span class:list={[
+          "absolute -left-[9px] flex items-center justify-center w-4 h-4 rounded-full ring-4 ring-white dark:ring-brand-background-dark",
+          i === 0
+            ? "bg-brand-primary dark:bg-brand-primary-dark"
+            : "bg-brand-secondary dark:bg-brand-secondary-dark"
+        ]} aria-hidden="true" />
+
+        <!-- Date range -->
+        <time class="block text-xs font-semibold text-brand-accent uppercase tracking-widest mb-1">
+          {entry.dateRange}
+        </time>
+
+        <!-- Role + org -->
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+          {entry.role}
+        </h3>
+        <p class="text-brand-secondary dark:text-brand-body-dark font-medium mb-3">
+          {entry.orgUrl ? (
+            <a href={entry.orgUrl} target="_blank" rel="noopener noreferrer" class="hover:text-brand-primary dark:hover:text-brand-primary-dark transition-colors underline underline-offset-2">
+              {entry.org}
+            </a>
+          ) : entry.org}
+        </p>
+
+        <!-- Highlights -->
+        <ul class="space-y-1.5">
+          {entry.highlights.map((h) => (
+            <li class="flex items-start gap-2 text-gray-600 dark:text-brand-body-dark text-sm leading-relaxed">
+              <span class="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-brand-accent" aria-hidden="true" />
+              {h}
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ol>
+</section>

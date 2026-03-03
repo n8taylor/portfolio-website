@@ -1,0 +1,107 @@
+---
+// CaseStudyLayout.astro — Wraps individual case study pages
+
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  role: string;
+  timeline: string;
+  tools: string[];
+  tags: string[];
+  coverImage?: string;
+  coverColor?: string;
+}
+
+const {
+  title,
+  description,
+  role,
+  timeline,
+  tools,
+  tags,
+  coverImage,
+  coverColor = 'from-brand-primary to-brand-accent',
+} = Astro.props;
+---
+
+<Layout title={`${title} — Nate Taylor`} description={description}>
+
+  <!-- Case Study Hero -->
+  <header class="w-full">
+    <!-- Cover image or gradient -->
+    <div class:list={[
+      "w-full h-64 md:h-96 overflow-hidden",
+      !coverImage && `bg-gradient-to-br ${coverColor}`
+    ]}>
+      {coverImage ? (
+        <img src={coverImage} alt={title} class="w-full h-full object-cover" />
+      ) : (
+        <div class="w-full h-full flex items-center justify-center">
+          <img src="/n8-logo-solid-1.svg" alt="" class="h-24 w-auto opacity-20" aria-hidden="true" />
+        </div>
+      )}
+    </div>
+
+    <!-- Meta strip -->
+    <div class="bg-white dark:bg-brand-background-dark border-b border-gray-200 dark:border-gray-700">
+      <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="flex flex-wrap gap-2 mb-3">
+          {tags.map((tag) => (
+            <span class="bg-brand-primary/10 dark:bg-brand-primary-dark/20 text-brand-primary dark:text-brand-primary-dark text-xs font-semibold px-3 py-1 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
+          {title}
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-brand-body-dark mb-6 max-w-2xl">
+          {description}
+        </p>
+        <dl class="flex flex-wrap gap-8 text-sm">
+          <div>
+            <dt class="font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide text-xs mb-0.5">Role</dt>
+            <dd class="text-gray-900 dark:text-white font-medium">{role}</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide text-xs mb-0.5">Timeline</dt>
+            <dd class="text-gray-900 dark:text-white font-medium">{timeline}</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide text-xs mb-0.5">Tools</dt>
+            <dd class="text-gray-900 dark:text-white font-medium">{tools.join(', ')}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <!-- Case study body (markdown rendered here) -->
+  <main class="container mx-auto px-4 py-16 max-w-4xl">
+    <div class="prose prose-lg dark:prose-invert max-w-none
+      prose-headings:font-heading prose-headings:text-gray-900 dark:prose-headings:text-white
+      prose-h2:text-3xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-4
+      prose-h2:text-brand-primary dark:prose-h2:text-brand-primary-dark
+      prose-p:text-gray-700 dark:prose-p:text-brand-body-dark prose-p:leading-relaxed
+      prose-img:rounded-xl prose-img:shadow-lg
+      prose-a:text-brand-primary dark:prose-a:text-brand-primary-dark">
+      <slot />
+    </div>
+  </main>
+
+  <!-- Back link -->
+  <div class="container mx-auto px-4 pb-16 max-w-4xl">
+    <a
+      href="/#work"
+      class="inline-flex items-center gap-2 text-brand-primary dark:text-brand-primary-dark font-semibold hover:gap-3 transition-all duration-200"
+    >
+      <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+      Back to Selected Work
+    </a>
+  </div>
+
+</Layout>
